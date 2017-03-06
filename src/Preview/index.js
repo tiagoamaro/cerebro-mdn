@@ -19,7 +19,7 @@ const listStyles = {
 }
 
 export default class Preview extends Component {
-  renderSuggestions(suggestions, searchFn) {
+  renderSuggestions(suggestions, openBrowserFn) {
     return (
       <div style={wrapperStyles}>
         <KeyboardNav>
@@ -30,7 +30,7 @@ export default class Preview extends Component {
                   key={s.id}
                   className={previewStyle['mdn--item']}
                   tagName={'li'}
-                  onSelect={() => searchFn(s.title)}
+                  onSelect={() => openBrowserFn(s.url)}
                 >
                   <div className={previewStyle['mdn--item--title']}>{s.title}</div>
                   <div className={previewStyle['mdn--item--excerpt']}>{stripTags(s.excerpt)}</div>
@@ -44,10 +44,10 @@ export default class Preview extends Component {
   }
 
   render() {
-    const {query, search} = this.props
+    const {query, openBrowser} = this.props
     return (
       <Preload promise={getSuggestions(query)} loader={<Loading />}>
-        {(suggestions) => this.renderSuggestions(suggestions || [], search)}
+        {(suggestions) => this.renderSuggestions(suggestions || [], openBrowser)}
       </Preload>
     )
   }
