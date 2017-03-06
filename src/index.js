@@ -1,22 +1,26 @@
 'use strict';
 
-const icon     = require('./icon.png');
-const mdnRegex = /mdn\s+(.*)/i;
+import React from 'react'
+import Preview from './Preview'
+
+const ICON_FILE = require('./icon.png');
+const MDN_REGEX = /mdn\s+(.*)/i;
 
 const plugin = ({term, display, actions}) => {
-  if (mdnRegex.test(term)) {
-    const openMdn = (query) => {
+  if (MDN_REGEX.test(term)) {
+    const searchMDN = (query) => {
       let q = encodeURIComponent(query);
       actions.open(`https://developer.mozilla.org/search?q=${q}`);
       actions.hideWindow()
     };
 
-    let [, mdnQuery] = mdnRegex.exec(term);
+    let [, mdnQuery] = MDN_REGEX.exec(term);
 
     display({
-      icon:     icon,
-      title:    `Search MDN for ${mdnQuery}`,
-      onSelect: () => openMdn(mdnQuery)
+      icon:       ICON_FILE,
+      title:      `Search MDN for ${mdnQuery}`,
+      onSelect:   () => searchMDN(mdnQuery),
+      getPreview: () => <Preview query={mdnQuery} key={mdnQuery} search={searchMDN}/>
     })
   }
 };

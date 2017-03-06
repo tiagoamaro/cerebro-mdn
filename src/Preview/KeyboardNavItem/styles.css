@@ -1,0 +1,21 @@
+.item {
+    cursor: pointer;
+    border-bottom: var(--main-border);
+    background: var(--result-background);
+    color: var(--result-title-color);
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    height: auto;
+    margin: 0 10px;
+}
+
+.item:last-child {
+    border-bottom: 0;
+}
+
+.item:focus {
+    outline: none;
+    background: var(--selected-result-background);
+    color: var(--selected-result-title-color);
+}
