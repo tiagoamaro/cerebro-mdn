@@ -28,11 +28,12 @@ export default class Preview extends Component {
               suggestions.map(s => (
                 <KeyboardNavItem
                   key={s.id}
+                  className={previewStyle['mdn--item']}
                   tagName={'li'}
                   onSelect={() => searchFn(s.title)}
                 >
-                  <div className={previewStyle.title}>{s.title}</div>
-                  <div className={previewStyle.excerpt}>{stripTags(s.excerpt)}</div>
+                  <div className={previewStyle['mdn--item--title']}>{s.title}</div>
+                  <div className={previewStyle['mdn--item--excerpt']}>{stripTags(s.excerpt)}</div>
                 </KeyboardNavItem>
               ))
             }

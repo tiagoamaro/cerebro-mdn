@@ -1,8 +1,16 @@
-.title {
-    width: 100%;
+.mdn--item {
+    height: auto;
+    flex-flow: row wrap;
+    padding: 5px 0;
 }
 
-.excerpt {
+.mdn--item--title {
+    width: 100%;
+    padding-bottom: 5px;
+}
+
+.mdn--item--excerpt {
     width: 100%;
     font-size: 0.625em;
+    padding-bottom: 5px;
 }

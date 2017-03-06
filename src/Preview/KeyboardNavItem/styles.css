@@ -3,11 +3,10 @@
     border-bottom: var(--main-border);
     background: var(--result-background);
     color: var(--result-title-color);
+    padding: 0 5px;
+    height: 35px;
     display: flex;
-    flex-flow: row wrap;
     align-items: center;
-    height: auto;
-    margin: 0 10px;
 }
 
 .item:last-child {
