@@ -13,7 +13,8 @@ const getSuggestions = (query) => {
       id:      document.id,
       title:   document.title,
       excerpt: document.excerpt,
-      url:     document.url
+      url:     document.url,
+      tags:    document.tags
     })))
 }
 

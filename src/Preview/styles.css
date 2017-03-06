@@ -9,6 +9,11 @@
     padding-bottom: 5px;
 }
 
+.mdn--item--tags {
+    font-size: 0.750em;
+    padding-bottom: 5px;
+}
+
 .mdn--item--excerpt {
     width: 100%;
     font-size: 0.625em;
