@@ -10,7 +10,8 @@ In Cerebro, type "mdn" followed by the query you want to search for:
 
 ## Roadmap
 
-- [ ] Preview MDN results (first 10?)
+- [x] Preview MDN results
+    - Clicking on a result, will open its URL
 
 ## License
 
