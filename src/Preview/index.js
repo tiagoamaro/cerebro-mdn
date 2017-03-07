@@ -32,9 +32,9 @@ export default class Preview extends Component {
                   tagName={'li'}
                   onSelect={() => openBrowserFn(s.url)}
                 >
-                  <div className={previewStyle['mdn--item--title']}>{s.title}</div>
-                  <div className={previewStyle['mdn--item--tags']}>Tags: {s.tags.join(', ')}</div>
-                  <div className={previewStyle['mdn--item--excerpt']}>{stripTags(s.excerpt)}</div>
+                  <span className={previewStyle['mdn--item--title']}>{s.title}</span>
+                  <span className={previewStyle['mdn--item--tags']}>Tags: {s.tags.join(', ')}</span>
+                  <span className={previewStyle['mdn--item--excerpt']}>{stripTags(s.excerpt)}</span>
                 </KeyboardNavItem>
               ))
             }
