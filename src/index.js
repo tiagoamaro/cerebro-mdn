@@ -31,5 +31,8 @@ const plugin = ({term, display, actions}) => {
 };
 
 module.exports = {
-  fn: plugin
+  fn: plugin,
+  icon: ICON_FILE,
+  name: 'Mozilla Develpment Network',
+  keyword: 'mdn'
 };
