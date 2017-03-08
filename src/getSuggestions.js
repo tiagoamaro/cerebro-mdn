@@ -1,7 +1,4 @@
 import {memoize} from 'cerebro-tools'
-import _throttle from 'lodash/throttle'
-
-const WAIT_TYPING_TIMEOUT = 300;
 
 /**
  * Get google suggestions for entered query
@@ -22,10 +19,10 @@ const getSuggestions = (query) => {
 };
 
 
-export default _throttle(memoize(getSuggestions, {
+export default memoize(getSuggestions, {
   length:   false,
   promise:  'then',
   // Expire translation cache in 30 minutes
   maxAge:   30 * 60 * 1000,
   preFetch: true
-}), WAIT_TYPING_TIMEOUT)
+})
